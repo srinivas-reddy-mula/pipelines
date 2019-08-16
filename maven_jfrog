@@ -13,7 +13,7 @@ node('maven')
     
     stage('Archive')
     {
-    archiveArtifacts 'target/*.war'
+    archiveArtifacts 'target/*.jar'
     junit 'target/surefire-reports/*.xml'
     }
 }
