@@ -29,6 +29,6 @@ node('jfrog')
         sh 'docker version'
         sh 'docker image ls'
         sh 'docker container ls'
-        sh 'docker container exec -it $(docker container ls) /bin/bash
+        sh 'docker container exec -it 40d2b8a94799 /bin/bash'
         }
 }
