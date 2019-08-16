@@ -1,0 +1,13 @@
+node('maven')
+{
+    stage('Git')
+    {
+        git 'https://github.com/spring-projects/spring-petclinic.git'
+    }
+    stage('Build')
+    {
+    sh 'pwd'
+    sh 'whoami'
+    sh 'mvn package' 
+    }
+}
