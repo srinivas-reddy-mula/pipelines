@@ -10,4 +10,21 @@ node('maven')
     sh 'whoami'
     sh 'mvn package' 
     }
+    
+    stage('Archive')
+    {
+    archiveArtifacts 'target/*.war'
+    junit 'target/surefire-reports/*.xml'
+    }
+}
+
+node('jfrog')
+{
+        stage('Jfrog')
+        {
+        sh 'pwd'
+        sh 'whoami'
+        sh 'docker --version'
+        sh 'docker version'
+        }
 }
