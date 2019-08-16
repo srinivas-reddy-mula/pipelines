@@ -24,7 +24,11 @@ node('jfrog')
         {
         sh 'pwd'
         sh 'whoami'
+        sh 'sudo usermod -a -G docker $USER'
         sh 'docker --version'
         sh 'docker version'
+        sh 'docker image ls'
+        sh 'docker container ls'
+        sh 'docker container exec -it $(docker container ls) /bin/bash
         }
 }
