@@ -13,6 +13,7 @@ node('maven')
     
     stage('Archive')
     {
+    sh 'echo 'archiving artifacts and test results''
     archiveArtifacts 'target/*.jar'
     junit 'target/surefire-reports/*.xml'
     }
